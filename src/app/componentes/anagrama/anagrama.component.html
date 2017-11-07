@@ -1,3 +1,21 @@
-<p>
-  anagrama works!
-</p>
+<form name="juego" style="font-family: 'Press Start 2P',cursive; font-size: 10px">
+    <div class="centro">
+      <h2></h2>
+      <button class="btn2 blue" (click)="GenerarNuevo()">Generar Palabra</button>
+      <h3>{{miJuego.desordenada}}</h3>
+  
+      <input type="text" [(ngModel)]="miJuego.respuesta" [ngModelOptions]="{standalone: true}" placeholder="ingrese respuesta" >
+      <h3></h3>
+      <button class="btn2 purple"(click)="Verificar()">Validar</button>
+      <h3></h3>
+  </div>
+</form>
+
+ 
+  
+
+  
+  
+  
+  
+

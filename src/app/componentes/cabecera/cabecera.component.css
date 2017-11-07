@@ -1,16 +1,19 @@
 .panel
 {
-    height: 200px;
-    background-image: url("/assets/imagenes/cabecera.png");
+    height: 50px;
+    width: 1000px;
+    background-color: rgba(102, 51, 153, 0.25);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: center;
+    
+    
 }
 
 
 .hero-text {
-text-align: center;
+text-align: center; 
 position: absolute;
 top: 50%;
 left: 50%;

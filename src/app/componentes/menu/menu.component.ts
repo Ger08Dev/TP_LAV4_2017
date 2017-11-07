@@ -17,17 +17,14 @@ export class MenuComponent implements OnInit {
   Juego(tipo: string) {
     switch (tipo) {
       case 'Adivina':
-          this.router.navigate(['/Juegos/Adivina']);
-        break;
-      case 'Agilidad':
-          this.router.navigate(['/Juegos/Agilidad']);
-        break;
-      case 'AdivinaMasListado':
           this.router.navigate(['/Juegos/AdivinaMasListado']);
         break;
-      case 'AgilidadaMasListado':
+      case 'Agilidad':
           this.router.navigate(['/Juegos/AgilidadaMasListado']);
         break;
+      case 'Listado':
+        this.router.navigate(['/Listado']);
+      break;
     }
   }
 

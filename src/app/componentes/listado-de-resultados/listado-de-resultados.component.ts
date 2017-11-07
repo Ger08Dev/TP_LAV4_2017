@@ -8,18 +8,38 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
 })
 export class ListadoDeResultadosComponent implements OnInit {
  @Input()
- listado: Array<any>;
+ listado: any;
+
 
 
   constructor() {
+   
+
    }
+
+   settings = {
+    actions:{delete:false,new:false},
+
+    columns: {
+      
+      nombre: {
+        title: 'Nombre Juego'
+      },
+      jugador: {
+        title: 'Jugador'
+      },
+      gano: {
+        title: 'Resultado'
+      }
+
+    }
+    
+  };
 
   ngOnInit() {
 
   }
 
-  ver() {
-    console.info(this.listado);
-  }
+  
 
 }

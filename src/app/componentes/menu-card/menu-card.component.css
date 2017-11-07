@@ -2,12 +2,12 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    max-width: 300px;
+    max-width: 200px;
    height: 100%;
     margin: 10px;
     padding-bottom: 10px;
     float: left;
-  background-color: #DEF3A6;
+  background-color: rgba(61, 53, 71, 0.41);
     text-align: center;
 }
 
@@ -54,4 +54,8 @@ img {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  h4{
+      color: white;
   }

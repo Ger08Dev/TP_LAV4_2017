@@ -6,7 +6,7 @@ import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivin
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import {HttpModule } from '@angular/http';
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
@@ -34,13 +34,15 @@ const MiRuteo = [{path: 'error' , component: ErrorComponent},
 */
 
 import { JuegoServiceService } from './servicios/juego-service.service';
+import { MiHttpService } from './servicios/mi-http.service';
 import { ListadosComponent } from './componentes/listados/listados.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
-import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
+import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
   declarations: [
@@ -66,13 +68,15 @@ import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
   imports: [
     BrowserModule,
     FormsModule,
-    RuteandoModule
+    RuteandoModule,
+    HttpModule,
+    Ng2SmartTableModule
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService],
+  providers: [ JuegoServiceService,MiHttpService,HttpModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

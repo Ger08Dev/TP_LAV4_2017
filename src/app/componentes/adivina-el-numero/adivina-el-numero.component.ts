@@ -21,13 +21,16 @@ export class AdivinaElNumeroComponent implements OnInit {
     this.ocultarVerificar=false;
   }
   generarnumero() {
+    this.nuevoJuego = new JuegoAdivina();
     this.nuevoJuego.generarnumero();
     this.contador=0;
   }
+
   verificar()
   {
     this.contador++;
     this.ocultarVerificar=true;
+
     console.info("numero Secreto:",this.nuevoJuego.gano);  
     if (this.nuevoJuego.verificar()){
       
@@ -46,17 +49,15 @@ export class AdivinaElNumeroComponent implements OnInit {
           mensaje="No,Te estaras Acercando???";
           break;
           case 3:
-          mensaje="No es, Yo crei que la tercera era la vencida.";
+          var modelo=this;
+          mensaje="La tercera fue la vencida.";
+          this.enviarJuego.emit(this.nuevoJuego);
+          this.MostarMensaje("Sos un Genio!!!",true);
+          this.nuevoJuego.numeroSecreto=0;
+          modelo.ocultarVerificar=false;
           break;
-          case 4:
-          mensaje="No era el  "+this.nuevoJuego.numeroIngresado;
-          break;
-          case 5:
-          mensaje=" intentos y nada.";
-          break;
-          case 6:
-          mensaje="Afortunado en el amor";
-          break;
+         
+          
       
         default:
             mensaje="Ya le erraste "+ this.contador+" veces";
@@ -79,11 +80,11 @@ export class AdivinaElNumeroComponent implements OnInit {
         x.className = "show Perdedor";
       }
     var modelo=this;
+
     setTimeout(function(){ 
       x.className = x.className.replace("show", "");
       modelo.ocultarVerificar=false;
      }, 3000);
-    console.info("objeto",x);
   
    }  
   ngOnInit() {

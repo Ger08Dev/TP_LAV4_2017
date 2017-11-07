@@ -1,5 +1,5 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
-import { JuegoAgilidad } from '../../clases/juego-agilidad'
+import { JuegoAgilidad } from '../../clases/juego-agilidad';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -8,33 +8,43 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
   templateUrl: './agilidad-aritmetica.component.html',
   styleUrls: ['./agilidad-aritmetica.component.css']
 })
+
 export class AgilidadAritmeticaComponent implements OnInit {
    @Output() 
   enviarJuego :EventEmitter<any>= new EventEmitter<any>();
+
   nuevoJuego : JuegoAgilidad;
   ocultarVerificar: boolean;
   Tiempo: number;
   repetidor:any;
   private subscription: Subscription;
+  Mensajes:string;
+  
   ngOnInit() {
   }
    constructor() {
      this.ocultarVerificar=true;
      this.Tiempo=5; 
-    this.nuevoJuego = new JuegoAgilidad();
+     this.nuevoJuego = new JuegoAgilidad();
+     
+
     console.info("Inicio agilidad");  
   }
+
   NuevoJuego() {
+    this.nuevoJuego = new JuegoAgilidad();
     this.ocultarVerificar=false;
-   this.repetidor = setInterval(()=>{ 
+    this.nuevoJuego.generarNuevo();    
+    this.repetidor = setInterval(()=>{ 
       
       this.Tiempo--;
-      console.log("llego", this.Tiempo);
+     
       if(this.Tiempo==0 ) {
         clearInterval(this.repetidor);
-        this.verificar();
+        this.verificar()
         this.ocultarVerificar=true;
         this.Tiempo=5;
+        
       }
       }, 900);
 
@@ -42,10 +52,43 @@ export class AgilidadAritmeticaComponent implements OnInit {
   verificar()
   {
     this.ocultarVerificar=false;
-    clearInterval(this.repetidor);
-   
+    if (this.nuevoJuego.verificar()){
+      
+      this.enviarJuego.emit(this.nuevoJuego);
+      this.MostarMensaje("Sos un Genio!!!",true);
+      
+      this.ocultarVerificar=true;
+      clearInterval(this.repetidor);
+      
 
-   
+    }else{
+      this.MostarMensaje("Puede fallar!!!");
+      clearInterval(this.repetidor);
+      this.ocultarVerificar=true;
+      this.enviarJuego.emit(this.nuevoJuego);
+      
+      this.Tiempo=5;
+    }
+    
+      
   }  
+
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+    this.Mensajes=mensaje;    
+    var x = document.getElementById("snackbar");
+    if(ganador)
+      {
+        x.className = "show Ganador";
+      }else{
+        x.className = "show Perdedor";
+      }
+    var modelo=this;
+    
+    setTimeout(function(){ 
+      x.className = x.className.replace("show", "");
+     }, 3000);
+    console.info("objeto",x);
+  
+   }  
 
 }
