@@ -18,8 +18,13 @@ export class ListadoDeResultadosComponent implements OnInit {
    }
 
    settings = {
-    actions:{delete:false,new:false},
-
+    hideHeader: false,
+    hideSubHeader: false,
+    pager: {
+      display: true,
+      perPage: 7,
+    },
+    actions: false,
     columns: {
       
       nombre: {
