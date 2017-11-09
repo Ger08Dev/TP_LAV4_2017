@@ -38,13 +38,22 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a routerLink="/Juegos">Menú de Juegos</a></li>
-                <li><a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a></li>
-                <li><a  (click)="Juego('Agilidad')">Agilidad</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Juegos <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a  (click)="Juego('Adivina')">Adivina</a></li>
+                        <li><a  (click)="Juego('Agilidad')">Agilidad</a></li>
+                        <li><a  (click)="Juego('PPT')">Piedra Papel Tijera</a></li>
+                        <li><a  (click)="Juego('Anagrama')">Anagrama</a></li>
+                        <li><a  (click)="Juego('Trivia')">Trivia Paices</a></li>
+                    </ul>
+                  </li>
+                
                 <li><a  (click)="Juego('Listado')">Listado</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-                  <li><a href="/Login"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+                  <li><a routerLink="/QuienSoy"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
+                  <li><a routerLink="/Login"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
                 </ul>
         </div>
       </div>

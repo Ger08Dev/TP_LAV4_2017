@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,14 +18,16 @@ export class LoginComponent implements OnInit {
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
-
+  lista:any;
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
-  constructor(
+  constructor(private miServicio : JuegoServiceService,
     private route: ActivatedRoute,
     private router: Router) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
+      this.lista = this.miServicio.InicializarLista();
+      console.log(this.lista);
 
   }
 
@@ -32,7 +35,8 @@ export class LoginComponent implements OnInit {
   }
 
   Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
+    if (this.usuario === 'admin' && this.clave === 'admin' || this.usuario === 'German' && this.clave === '1234') {
+      this.miServicio.CargarUsuario(this.usuario);
       this.router.navigate(['/Principal']);
     }
   }

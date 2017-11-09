@@ -10,9 +10,18 @@ export class JuegoServiceService {
   myArrayServicio : Array<Juego>;
   lista:any;
   list:any;
+  UsuarioLogueado:string;
 
     constructor(private miServicio : MiHttpService) { 
       this.myArrayServicio = new Array<Juego>();
+     }
+
+     TraerUsuario(){
+      return this.UsuarioLogueado;
+     }
+
+     CargarUsuario(user:string){
+      this.UsuarioLogueado = user;
      }
     
      public TraerPalabas(){

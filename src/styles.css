@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+h2{
+    font-family: 'Press Start 2P',cursive; 
+    color: white;
+}
+
 .btn2 {
     position: relative;
   
