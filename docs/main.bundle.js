@@ -2043,7 +2043,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/principal/principal.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-menu>  </app-menu>\r\n\r\n<form >\r\n  <div class=\"centro\">\r\n<img src=\"./assets/imagenes/saladejuegos.png\" alt=\"Image\" style=\"width:750px \">\r\n</div>\r\n<div class=\"centro\" style=\"font-family: 'Press Start 2P',cursive; font-size: 10px; \">\r\n   \r\n    <h2><a routerLink=\"/Juegos\">Jugar</a></h2>\r\n          \r\n           \r\n                   \r\n              \r\n                    <h2>  <a routerLink=\"/Listado\">Listado de Resultados</a></h2>\r\n           \r\n    \r\n       \r\n        \r\n     \r\n</div>\r\n</form>"
+module.exports = "<app-menu>  </app-menu>\r\n\r\n<form >\r\n  <div class=\"centro\">\r\n<img src=\"./TP_LAV4_2017/assets/imagenes/saladejuegos.png\" alt=\"Image\" style=\"width:750px \">\r\n</div>\r\n<div class=\"centro\" style=\"font-family: 'Press Start 2P',cursive; font-size: 10px; \">\r\n   \r\n    <h2><a routerLink=\"/Juegos\">Jugar</a></h2>\r\n          \r\n           \r\n                   \r\n              \r\n                    <h2>  <a routerLink=\"/Listado\">Listado de Resultados</a></h2>\r\n           \r\n    \r\n       \r\n        \r\n     \r\n</div>\r\n</form>"
 
 /***/ }),
 
