@@ -24,7 +24,7 @@ export class AgilidadMasListadoComponent implements OnInit {
   {
     this.listadoParaCompartir.push(juego);
     this.servicioJuego.CargarLista(this.listadoParaCompartir);
-    this.listadoParaCompartir = this.servicioJuego.InicializarLista();
-    this.lista = JSON.stringify(this.listadoParaCompartir);
+
+    console.log(this.listadoParaCompartir);console.log(this.lista);
   }
 }

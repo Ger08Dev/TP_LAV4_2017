@@ -12,9 +12,5 @@ ng2-smart-table{
 
 }
 
-ng2-smart-filter input[type=search]{
-    box-sizing:inherit;
-    color: black;
-    background-color: black;
-}
+
 

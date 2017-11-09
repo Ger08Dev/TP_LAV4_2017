@@ -87,7 +87,6 @@ export class AgilidadAritmeticaComponent implements OnInit {
     setTimeout(function(){ 
       x.className = x.className.replace("show", "");
      }, 3000);
-    console.info("objeto",x);
   
    }  
 
