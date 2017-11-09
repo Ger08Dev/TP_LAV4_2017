@@ -15,7 +15,7 @@ export class MiHttpService {
 
   public TraerPalabra(): Observable<Response>{
     return this.http
-    .get("../../assets/palabras.json")
+    .get("../TP_LAV4_2017/assets/palabras.json")
     .map(this.extraerDatos)
     .catch(this.handleError);
   }
