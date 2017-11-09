@@ -43,6 +43,11 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
+import { PPTijeraComponent } from './componentes/pptijera/pptijera.component';
+import { PPTijeraMasListadoComponent } from './componentes/pptijera-mas-listado/pptijera-mas-listado.component';
+import { TriviaPaicesComponent } from './componentes/trivia-paices/trivia-paices.component';
+import { TriviaPaicesMasListadoComponent } from './componentes/trivia-paices-mas-listado/trivia-paices-mas-listado.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +68,12 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     MenuCardComponent,
     CabeceraComponent,
     QuienSoyComponent,
-    AnagramaComponent
+    AnagramaComponent,
+    AnagramaMasListadoComponent,
+    PPTijeraComponent,
+    PPTijeraMasListadoComponent,
+    TriviaPaicesComponent,
+    TriviaPaicesMasListadoComponent
   ],
   imports: [
     BrowserModule,
